@@ -1,2 +1,5 @@
-﻿CREATE OR REPLACE VIEW "0308-test" FOLDER = '/30.working view' DESCRIPTION = '三八婦女節測試使用'  AS SELECT p_av_web_sales_by_customer."C_SALUTATION" AS "C_SALUTATION", p_av_web_sales_by_customer."sales  amt" AS "sales  amt" FROM p_av_web_sales_by_customer WHERE total = 2000 CONTEXT ('I18N' = 'tw');
+﻿CREATE OR REPLACE VIEW "0308-test" FOLDER = '/30.working view' DESCRIPTION = '三八婦女節測試使用'  AS SELECT p_av_web_sales_by_customer."C_SALUTATION" AS "C_SALUTATION", sum(p_av_web_sales_by_customer."sales  amt") AS sum_total FROM p_av_web_sales_by_customer WHERE total = 2000 GROUP BY p_av_web_sales_by_customer."C_SALUTATION" CONTEXT ('I18N' = 'tw');
+
+ALTER VIEW "0308-test"
+ LAYOUT (p_av_web_sales_by_customer = [20, 20, 200, 105]);
 
