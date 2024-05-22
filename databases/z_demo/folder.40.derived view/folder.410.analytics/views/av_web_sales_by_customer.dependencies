@@ -1,0 +1,14 @@
+﻿/databases/z_demo/folder.40.derived view/40.derived view.vql
+/databases/z_demo/folder.40.derived view/folder.410.analytics/410.analytics.vql
+/databases/z_demo/folder.30.working view/30.working view.vql
+/databases/z_demo/folder.10.baseview/10.baseview.vql
+/databases/z_demo/folder.10.baseview/folder.120.mssql/120.mssql.vql
+/databases/z_demo/folder.00.source/00.source.vql
+/databases/z_demo/folder.00.source/folder.020.mssql/020.mssql.vql
+/databases/z_demo/folder.00.source/folder.020.mssql/datasources/jdbc/ds_jdbc_sql(monica).vql
+/databases/z_demo/folder.10.baseview/folder.120.mssql/views/bv_sql_web_sales_all.vql
+/databases/z_demo/folder.10.baseview/folder.110.oracle/110.oracle.vql
+/databases/z_demo/folder.00.source/folder.010.oracle/010.oracle.vql
+/databases/z_demo/folder.00.source/folder.010.oracle/datasources/jdbc/ds_jdbc_oracle(monica).vql
+/databases/z_demo/folder.10.baseview/folder.110.oracle/views/bv_oracle_customer.vql
+/databases/z_demo/folder.30.working view/views/wk_web_sales_customer.vql

@@ -1,0 +1,83 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC "bv_oracle_CUSTOMER"
+    FOLDER = '/10.baseview/110.oracle'
+    DATASOURCENAME="ds_jdbc_oracle(monica)"
+    SCHEMANAME='${databases.z_demo.folder.10..baseview.folder.110..oracle.views.jdbc.bv_oracle_customer.SCHEMANAME}' 
+    RELATIONNAME='CUSTOMER' 
+    OUTPUTSCHEMA (
+        "C_CUSTOMER_SK" = 'C_CUSTOMER_SK' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='38', sourcetypeid='2', sourcetypename='NUMBER')  NOT NULL SORTABLE,
+        "C_CUSTOMER_ID" = 'C_CUSTOMER_ID' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='16', sourcetypeid='1', sourcetypename='CHAR')  NOT NULL SORTABLE,
+        "C_CURRENT_CDEMO_SK" = 'C_CURRENT_CDEMO_SK' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='38', sourcetypeid='2', sourcetypename='NUMBER')  SORTABLE,
+        "C_CURRENT_HDEMO_SK" = 'C_CURRENT_HDEMO_SK' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='38', sourcetypeid='2', sourcetypename='NUMBER')  SORTABLE,
+        "C_CURRENT_ADDR_SK" = 'C_CURRENT_ADDR_SK' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='38', sourcetypeid='2', sourcetypename='NUMBER')  SORTABLE,
+        "C_FIRST_SHIPTO_DATE_SK" = 'C_FIRST_SHIPTO_DATE_SK' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='38', sourcetypeid='2', sourcetypename='NUMBER')  SORTABLE,
+        "C_FIRST_SALES_DATE_SK" = 'C_FIRST_SALES_DATE_SK' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='38', sourcetypeid='2', sourcetypename='NUMBER')  SORTABLE,
+        "C_SALUTATION" = 'C_SALUTATION' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='10', sourcetypeid='1', sourcetypename='CHAR')  SORTABLE,
+        "C_FIRST_NAME" = 'C_FIRST_NAME' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='20', sourcetypeid='1', sourcetypename='CHAR')  SORTABLE,
+        "C_LAST_NAME" = 'C_LAST_NAME' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='30', sourcetypeid='1', sourcetypename='CHAR')  SORTABLE,
+        "C_PREFERRED_CUST_FLAG" = 'C_PREFERRED_CUST_FLAG' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='1', sourcetypeid='1', sourcetypename='CHAR')  SORTABLE,
+        "C_BIRTH_DAY" = 'C_BIRTH_DAY' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='38', sourcetypeid='2', sourcetypename='NUMBER')  SORTABLE,
+        "C_BIRTH_MONTH" = 'C_BIRTH_MONTH' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='38', sourcetypeid='2', sourcetypename='NUMBER')  SORTABLE,
+        "C_BIRTH_YEAR" = 'C_BIRTH_YEAR' :'java.math.BigDecimal' (OPT) (sourcetypedecimals='0', sourcetyperadix='10', sourcetypesize='38', sourcetypeid='2', sourcetypename='NUMBER')  SORTABLE,
+        "C_BIRTH_COUNTRY" = 'C_BIRTH_COUNTRY' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='20', sourcetypeid='12', sourcetypename='VARCHAR2')  SORTABLE,
+        "C_LOGIN" = 'C_LOGIN' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='13', sourcetypeid='1', sourcetypename='CHAR')  SORTABLE,
+        "C_EMAIL_ADDRESS" = 'C_EMAIL_ADDRESS' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='50', sourcetypeid='1', sourcetypename='CHAR')  SORTABLE,
+        "C_LAST_REVIEW_DATE" = 'C_LAST_REVIEW_DATE' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypesize='10', sourcetypeid='1', sourcetypename='CHAR')  SORTABLE
+    )
+    CONSTRAINT 'SYS_C007452' PRIMARY KEY ( 'C_CUSTOMER_SK' )
+    INDEX 'SYS_C007452' CLUSTER UNIQUE PRIMARY ( 'C_CUSTOMER_SK' );
+
+CREATE OR REPLACE TABLE bv_oracle_customer I18N us_cst (
+        "C_CUSTOMER_SK":decimal (notnull, sourcetypeid = '3', sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', description = 'Customer_PK'),
+        "C_CUSTOMER_ID":text (notnull, sourcetypeid = '1', sourcetyperadix = '10', sourcetypesize = '16', description = 'Customer_ID'),
+        "C_CURRENT_CDEMO_SK":decimal (sourcetypeid = '3', sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', description = 'CURRENT_CDEMO_SK'),
+        "C_CURRENT_HDEMO_SK":decimal (sourcetypeid = '3', sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', description = 'CURRENT_HDEMO_SK'),
+        "C_CURRENT_ADDR_SK":decimal (sourcetypeid = '3', sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', description = 'CURRENT_ADDR_SK'),
+        "C_FIRST_SHIPTO_DATE_SK":decimal (sourcetypeid = '3', sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', description = 'FIRST_SHIPTO_DATE_SK'),
+        "C_FIRST_SALES_DATE_SK":decimal (sourcetypeid = '3', sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', description = 'FIRST_SALES_DATE_SK'),
+        "C_SALUTATION":text (sourcetypeid = '1', sourcetyperadix = '10', sourcetypesize = '10', description = 'SALUTATION'),
+        "C_FIRST_NAME":text (sourcetypeid = '1', sourcetyperadix = '10', sourcetypesize = '20', description = 'FIRST_NAME'),
+        "C_LAST_NAME":text (sourcetypeid = '1', sourcetyperadix = '10', sourcetypesize = '30', description = 'LAST_NAME'),
+        "C_PREFERRED_CUST_FLAG":text (sourcetypeid = '1', sourcetyperadix = '10', sourcetypesize = '1', description = 'PREFERRED_CUST_FLAG'),
+        "C_BIRTH_DAY":decimal (sourcetypeid = '3', sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', description = 'BIRTH_DAY'),
+        "C_BIRTH_MONTH":decimal (sourcetypeid = '3', sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', description = 'BIRTH_MONTH'),
+        "C_BIRTH_YEAR":decimal (sourcetypeid = '3', sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', description = 'BIRTH_YEAR'),
+        "C_BIRTH_COUNTRY":text (sourcetypeid = '12', sourcetyperadix = '10', sourcetypesize = '20', description = 'BIRTH_COUNTRY'),
+        "C_LOGIN":text (sourcetypeid = '1', sourcetyperadix = '10', sourcetypesize = '13', description = 'LOGIN'),
+        "C_EMAIL_ADDRESS":text (sourcetypeid = '1', sourcetyperadix = '10', sourcetypesize = '50', description = 'EMAIL_ADDRESS'),
+        "C_LAST_REVIEW_DATE":text (sourcetypeid = '1', sourcetyperadix = '10', sourcetypesize = '10', description = 'LAST_REVIEW_DATE')
+    )
+    FOLDER = '/10.baseview/110.oracle'
+    DESCRIPTION = '客戶資料檔(Oracle)'
+    CONSTRAINT 'SYS_C007452' PRIMARY KEY ( 'C_CUSTOMER_SK' )
+    CACHE OFF
+    BATCHSIZEINCACHE DEFAULT
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD "bv_oracle_CUSTOMER"(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "C_CUSTOMER_SK" (any) OPT ANY
+             ADD "C_CUSTOMER_ID" (any) OPT ANY
+             ADD "C_CURRENT_CDEMO_SK" (any) OPT ANY
+             ADD "C_CURRENT_HDEMO_SK" (any) OPT ANY
+             ADD "C_CURRENT_ADDR_SK" (any) OPT ANY
+             ADD "C_FIRST_SHIPTO_DATE_SK" (any) OPT ANY
+             ADD "C_FIRST_SALES_DATE_SK" (any) OPT ANY
+             ADD "C_SALUTATION" (any) OPT ANY
+             ADD "C_FIRST_NAME" (any) OPT ANY
+             ADD "C_LAST_NAME" (any) OPT ANY
+             ADD "C_PREFERRED_CUST_FLAG" (any) OPT ANY
+             ADD "C_BIRTH_DAY" (any) OPT ANY
+             ADD "C_BIRTH_MONTH" (any) OPT ANY
+             ADD "C_BIRTH_YEAR" (any) OPT ANY
+             ADD "C_BIRTH_COUNTRY" (any) OPT ANY
+             ADD "C_LOGIN" (any) OPT ANY
+             ADD "C_EMAIL_ADDRESS" (any) OPT ANY
+             ADD "C_LAST_REVIEW_DATE" (any) OPT ANY
+        )
+        OUTPUTLIST ("C_BIRTH_COUNTRY", "C_BIRTH_DAY", "C_BIRTH_MONTH", "C_BIRTH_YEAR", "C_CURRENT_ADDR_SK", "C_CURRENT_CDEMO_SK", "C_CURRENT_HDEMO_SK", "C_CUSTOMER_ID", "C_CUSTOMER_SK", "C_EMAIL_ADDRESS", "C_FIRST_NAME", "C_FIRST_SALES_DATE_SK", "C_FIRST_SHIPTO_DATE_SK", "C_LAST_NAME", "C_LAST_REVIEW_DATE", "C_LOGIN", "C_PREFERRED_CUST_FLAG", "C_SALUTATION"
+        )
+        WRAPPER (jdbc "bv_oracle_CUSTOMER")
+    )
+    SMART_THEN_ATSOURCE_THROUGH_VDP;
+

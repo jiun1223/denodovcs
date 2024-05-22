@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW p_av_web_sales_by_customer FOLDER = '/30.working view' AS SELECT av_web_sales_by_customer.ws_ship_customer_sk AS ws_ship_customer_sk, av_web_sales_by_customer."C_SALUTATION" AS "C_SALUTATION", av_web_sales_by_customer."C_FIRST_NAME" AS "C_FIRST_NAME", av_web_sales_by_customer."C_LAST_NAME" AS "C_LAST_NAME", av_web_sales_by_customer."sales  amt" AS "sales  amt", av_web_sales_by_customer."list amt" AS "list amt", av_web_sales_by_customer.difference AS difference, total FROM av_web_sales_by_customer WHERE "sales  amt" >= total USING PARAMETERS ( total : int) CONTEXT ('I18N' = 'tw');
+
+ALTER VIEW p_av_web_sales_by_customer
+ LAYOUT (av_web_sales_by_customer = [20, 20, 200, 105]);
+

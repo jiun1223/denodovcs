@@ -1,0 +1,33 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE DATASOURCE JDBC "ds_jdbc_sql(monica)"
+    FOLDER = '/00.source/020.mssql'
+    DRIVERCLASSNAME = 'com.microsoft.sqlserver.jdbc.SQLServerDriver'
+    DATABASEURI = '${databases.z_demo.folder.00..source.folder.020..mssql.datasources.jdbc.ds_jdbc_sql(monica).DATABASEURI}'
+    USERNAME = '${databases.z_demo.folder.00..source.folder.020..mssql.datasources.jdbc.ds_jdbc_sql(monica).USERNAME}'
+    USERPASSWORD = '${databases.z_demo.folder.00..source.folder.020..mssql.datasources.jdbc.ds_jdbc_sql(monica).USERPASSWORD}' ${databases.z_demo.folder.00..source.folder.020..mssql.datasources.jdbc.ds_jdbc_sql(monica).USERPASSWORD.ENCRYPTED}
+    CLASSPATH = 'mssql-jdbc-7.x'
+    DATABASENAME = 'sqlserver'
+    DATABASEVERSION = '2012'
+    FETCHSIZE = 1000
+    VALIDATIONQUERY = 'Select 1'
+    INITIALSIZE = 4
+    MAXIDLE = -1
+    MINIDLE = 0
+    MAXACTIVE = 20
+    EXHAUSTEDACTION = 1
+    TESTONBORROW = true
+    TESTONRETURN = false
+    TESTWHILEIDLE = false
+    TIMEBETWEENEVICTION = -1
+    NUMTESTPEREVICTION = 3
+    MINEVICTABLETIME = 1800000
+    POOLPREPAREDSTATEMENTS = false
+    MAXOPENPREPAREDSTATEMENTS = -1
+    DATA_LOAD_CONFIGURATION (
+        BATCHINSERTSIZE = 1000
+    )
+    SOURCECONFIGURATION (
+        delegate_binary_orderby_collation = 'Latin1_General_BIN',
+        delegateanalyticfunctionslist = (avg, count, cume_dist, dense_rank, first_value, lag, last_value, lead, max, min, ntile, percent_rank, percentile_cont, percentile_disc, rank, row_number, sum)
+    );
+

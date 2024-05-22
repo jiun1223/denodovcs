@@ -1,0 +1,11 @@
+﻿CREATE OR REPLACE VIEW av_web_sales_by_customer FOLDER = '/40.derived view/410.analytics' DESCRIPTION = '跨兩資料源 分析客戶消費金額
+SQL web_sales + Oracle customer'  AS SELECT ws_ship_customer_sk AS ws_ship_customer_sk, "C_SALUTATION" AS "C_SALUTATION", "C_FIRST_NAME" AS "C_FIRST_NAME", "C_LAST_NAME" AS "C_LAST_NAME", sum(ws_sales_price) AS "sales  amt", sum(ws_list_price) AS "list amt", (sum(ws_list_price)-sum(ws_sales_price)) AS difference FROM wk_web_sales_customer GROUP BY ws_ship_customer_sk, "C_SALUTATION", "C_FIRST_NAME", "C_LAST_NAME" CONTEXT ('I18N' = 'us_cst');
+
+ALTER VIEW av_web_sales_by_customer
+ LAYOUT (wk_web_sales_customer = [20, 20, 293, 555]);
+
+ALTER VIEW av_web_sales_by_customer
+ CACHE FULL
+     BATCHSIZEINCACHE DEFAULT TIMETOLIVEINCACHE NOEXPIRE
+ DELEGATESTATSQUERY = true GET_TABLE_STATS = true ATCACHE_THROUGH_VDP_ONLY;
+

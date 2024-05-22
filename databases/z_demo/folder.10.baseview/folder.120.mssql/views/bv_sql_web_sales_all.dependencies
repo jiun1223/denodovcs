@@ -1,0 +1,5 @@
+﻿/databases/z_demo/folder.10.baseview/10.baseview.vql
+/databases/z_demo/folder.10.baseview/folder.120.mssql/120.mssql.vql
+/databases/z_demo/folder.00.source/00.source.vql
+/databases/z_demo/folder.00.source/folder.020.mssql/020.mssql.vql
+/databases/z_demo/folder.00.source/folder.020.mssql/datasources/jdbc/ds_jdbc_sql(monica).vql

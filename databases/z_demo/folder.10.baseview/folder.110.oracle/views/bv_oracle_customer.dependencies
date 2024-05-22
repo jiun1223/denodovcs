@@ -1,0 +1,5 @@
+﻿/databases/z_demo/folder.10.baseview/10.baseview.vql
+/databases/z_demo/folder.10.baseview/folder.110.oracle/110.oracle.vql
+/databases/z_demo/folder.00.source/00.source.vql
+/databases/z_demo/folder.00.source/folder.010.oracle/010.oracle.vql
+/databases/z_demo/folder.00.source/folder.010.oracle/datasources/jdbc/ds_jdbc_oracle(monica).vql

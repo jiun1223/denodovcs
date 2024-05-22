@@ -1,0 +1,2 @@
+﻿CREATE OR REPLACE VIEW "0308-test" FOLDER = '/30.working view' DESCRIPTION = '三八婦女節測試使用'  AS SELECT p_av_web_sales_by_customer."C_SALUTATION" AS "C_SALUTATION", p_av_web_sales_by_customer."sales  amt" AS "sales  amt" FROM p_av_web_sales_by_customer WHERE total = 2000 CONTEXT ('I18N' = 'tw');
+
